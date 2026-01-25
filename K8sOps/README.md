@@ -11,8 +11,8 @@
    - [Quick Setup](#quick-setup)
    - [Prompts Used to Create K8sOps](#prompts-used-to-create-k8sops)
 2. [Introduction](#introduction)
-3. [Layer 1: GitHub Copilot SDK - The Extensibility Foundation](#layer-1-github-copilot-sdk----the-extensibility-foundation)
-4. [Layer 2: GitHub Copilot CLI - The User Interface](#layer-2-github-copilot-cli----the-user-interface)
+3. [Layer 1: GitHub Copilot SDK (The Extensibility Foundation)](#layer-1-github-copilot-sdk--the-extensibility-foundation)
+4. [Layer 2: GitHub Copilot CLI (The User Interface)](#layer-2-github-copilot-cli--the-user-interface)
 5. [Layer 3: AKS Model Context Protocol (MCP) Server](#layer-3-aks-model-context-protocol-mcp-server)
 6. [Bringing It Together: K8sOps Skill](#bringing-it-together-k8sops-skill)
 7. [Key Features Deep Dive](#key-features-deep-dive)
@@ -138,7 +138,7 @@ In this post, I'll walk through each layer of the architecture and how they work
 
 ---
 
-## Layer 1: GitHub Copilot SDK  -  The Extensibility Foundation
+## Layer 1: GitHub Copilot SDK  (The Extensibility Foundation)
 
 ### What is the GitHub Copilot SDK?
 
@@ -183,7 +183,7 @@ Without the SDK, you'd need to build all this infrastructure yourself. With it, 
 
 ---
 
-## Layer 2: GitHub Copilot CLI  -  The User Interface
+## Layer 2: GitHub Copilot CLI  (The User Interface)
 
 ### What is GitHub Copilot CLI?
 
@@ -203,7 +203,7 @@ The CLI acts as the runtime for skills defined using the SDK:
 ```
 User Input          CLI Processing           Skill Execution
 ───────────        ────────────────         ────────────────
-               
+             
 /k8s status   ──->  Match to K8sOps    ──->  Read SKILL.md
                    skill                    Parse commands
                                             Invoke MCP tools
