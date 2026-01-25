@@ -2,6 +2,8 @@
 
 ##### *How I built K8sOps by combining the Copilot extensibility stack to turn natural language into Kubernetes operational intelligence*
 
+📖 **Additional Documentation:** [Architecture](ARCHITECTURE.md) | [Demo Runbook](DEMO-RUNBOOK.md)
+
 ---
 
 ## Table of Contents
