@@ -2,8 +2,6 @@
 
 ##### *How I built K8sOps by combining the Copilot extensibility stack to turn natural language into Kubernetes operational intelligence*
 
-📖 **Additional Documentation:** [Architecture](ARCHITECTURE.md) | [Demo Runbook](DEMO-RUNBOOK.md)
-
 ---
 
 ## Table of Contents
@@ -22,7 +20,9 @@
 9. [Real-World Incident Response](#real-world-incident-response)
 10. [Lessons Learned](#lessons-learned)
 11. [Conclusion](#conclusion)
-12. [Resources](#resources)
+12. [Architecture](#architecture)
+13. [Demo Runbook](#demo-runbook)
+14. [Resources](#resources)
 
 ---
 
@@ -580,7 +580,23 @@ K8sOps demonstrates the power of the GitHub Copilot extensibility stack:
 Together, they turn a 30+ minute incident investigation into a 2-5 minute conversation.
 
 The skill is open source:
-**https://github.com/jvargh/ghcp-stuff/tree/main/Impact-Generator/skills/K8sOps**
+**https://github.com/jvargh/ghcp-stuff/tree/main/K8sOps**
+
+---
+
+## Architecture
+
+The K8sOps skill architecture shows the complete end-to-end flow from user input through the CLI, skill layer, MCP server, and into Azure/Kubernetes APIs. It includes detailed component diagrams for command processing, data flow, and the response formatting pipeline.
+
+👉 **[View Full Architecture Documentation](ARCHITECTURE.md)**
+
+---
+
+## Demo Runbook
+
+A step-by-step runbook that exercises all K8sOps commands in a realistic production incident response scenario. Walk through cluster health checks, deep diagnostics, log aggregation, support case generation, and remediation - complete with expected outputs and troubleshooting tips.
+
+👉 **[View Demo Runbook](DEMO-RUNBOOK.md)**
 
 ---
 
