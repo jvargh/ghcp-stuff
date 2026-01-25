@@ -4,6 +4,21 @@
 
 ---
 
+## Table of Contents
+
+1. [The Problem](#-the-problem)
+2. [The Building Blocks](#-the-building-blocks)
+3. [How It All Connects](#-how-it-all-connects)
+4. [The Build: Natural Language >> Working Skill](#️-the-build-natural-language--working-skill)
+5. [Using It](#-using-it)
+6. [Results](#-results)
+7. [Other Use Cases](#-other-use-cases)
+8. [Key Takeaways](#-key-takeaways)
+9. [The Future is Agentic](#-the-future-is-agentic)
+10. [References & Resources](#-references--resources)
+
+---
+
 ## 😫 The Problem
 
 It's Friday afternoon. Leadership asks for a status update.
