@@ -4,6 +4,17 @@ A collection of custom skills and documentation for extending GitHub Copilot CLI
 
 ## Contents
 
+### 🌐 [AppsOps](./AppsOps/)
+
+An AI-powered incident response skill for Azure App Services (Web Apps, Function Apps, App Service Plans). Uses Azure MCP Server for operations.
+
+**Key Features:**
+- `/apps status` - Quick health check across all apps
+- `/apps diagnose` - Deep root cause analysis
+- `/apps logs --aggregate` - Correlated timeline from all sources
+- `/apps case` - Generate support case templates
+- Integrates with Azure via Azure MCP Server
+
 ### 📊 [Impact-Generator](./Impact-Generator/)
 
 An AI-powered impact report generator using GitHub Copilot CLI and WorkIQ MCP. Transforms scattered work artifacts (calendar, emails, meetings, transcripts) into strategic impact reports with a single command.
@@ -29,6 +40,7 @@ An AKS incident response skill for Kubernetes operational intelligence. Turns na
 
 - [GitHub Copilot CLI](https://github.com/github/copilot-cli) installed
 - MCP servers configured as needed:
+  - [Azure MCP](https://github.com/microsoft/mcp) for AppsOps
   - [WorkIQ MCP](https://github.com/microsoft/work-iq-mcp) for Impact-Generator
   - [AKS MCP](https://github.com/Azure/aks-mcp) for K8sOps
 
@@ -41,6 +53,7 @@ An AKS incident response skill for Kubernetes operational intelligence. Turns na
 
 2. Copy skills to your skills directory:
    ```bash
+   cp -r AppsOps/skills/* ~/.copilot/skills/
    cp -r Impact-Generator/skills/* ~/.copilot/skills/
    cp -r K8sOps/skills/* ~/.copilot/skills/
    ```
