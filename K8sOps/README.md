@@ -1,6 +1,6 @@
 # Building K8sOps: An AKS Incident Response Skill with GitHub Copilot SDK, CLI, and AKS MCP
 
-*How I built K8sOps - combining the Copilot extensibility stack to turn natural language into Kubernetes operational intelligence*
+##### *How I built K8sOps by combining the Copilot extensibility stack to turn natural language into Kubernetes operational intelligence*
 
 ---
 
@@ -203,7 +203,7 @@ The CLI acts as the runtime for skills defined using the SDK:
 ```
 User Input          CLI Processing           Skill Execution
 ───────────        ────────────────         ────────────────
-             
+           
 /k8s status   ──->  Match to K8sOps    ──->  Read SKILL.md
                    skill                    Parse commands
                                             Invoke MCP tools
