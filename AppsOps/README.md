@@ -20,7 +20,9 @@
 9. [Real-World Incident Response](#real-world-incident-response)
 10. [Lessons Learned](#lessons-learned)
 11. [Conclusion](#conclusion)
-12. [Resources](#resources)
+12. [Architecture](#architecture)
+13. [Demo Runbook](#demo-runbook)
+14. [Resources](#resources)
 
 ---
 
@@ -524,6 +526,22 @@ AppsOps demonstrates that the GitHub Copilot extensibility stack works across Az
 
 The skill is open source:
 **https://github.com/jvargh/ghcp-stuff/tree/main/AppsOps**
+
+---
+
+## Architecture
+
+The AppsOps skill architecture shows the complete end-to-end flow from user input through the CLI, skill layer, Azure MCP server, and into Azure APIs. It includes detailed component diagrams for command processing, data flow, and the response formatting pipeline.
+
+👉 **[View Full Architecture Documentation](ARCHITECTURE.md)**
+
+---
+
+## Demo Runbook
+
+A step-by-step runbook that exercises all AppsOps commands in a realistic production incident response scenario. Walk through app health checks, deep diagnostics, log aggregation, support case generation, and remediation - complete with expected outputs and troubleshooting tips.
+
+👉 **[View Demo Runbook](DEMO-RUNBOOK.md)**
 
 ---
 
