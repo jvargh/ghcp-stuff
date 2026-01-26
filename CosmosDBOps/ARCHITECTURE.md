@@ -9,14 +9,14 @@ How CosmosDBOps uses Azure MCP to query live Azure resources and integrates with
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                                USER                                         │
-│                         "/cosmosdb diagnose testingjv"                      │
+│                         "/cosmosdb diagnose sample-cosmos"                      │
 └─────────────────────────────────────┬───────────────────────────────────────┘
                                       │
                                       v
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                          GITHUB COPILOT CLI                                 │
 │                                                                             │
-│   1. Parses command: /cosmosdb diagnose testingjv                           │
+│   1. Parses command: /cosmosdb diagnose sample-cosmos                           │
 │   2. Loads skill: ~/.copilot/skills/CosmosDBOps/SKILL.md                    │
 │   3. Identifies MCP dependency: azure-mcp                                   │
 └─────────────────────────────────────┬───────────────────────────────────────┘
@@ -65,7 +65,7 @@ How CosmosDBOps uses Azure MCP to query live Azure resources and integrates with
 │                           DIAGNOSIS OUTPUT                                  │
 │                                                                             │
 │   🔴 ISSUE: HIGH RU CONSUMPTION (100%)                                      │
-│   WHAT: testingjv/TestDB/Orders hitting throughput ceiling                  │
+│   WHAT: sample-cosmos/TestDB/Orders hitting throughput ceiling                  │
 │   WHY:  400 RU/s provisioned, demand exceeds capacity                       │
 │   FIX:  az cosmosdb mongodb collection throughput migrate ...               │
 │                                                                             │
@@ -166,7 +166,7 @@ CosmosDBOps references these rules when issues are detected.
 │  │  Account Config    │  │  Performance       │  │  Diagnostic        │  │
 │  │                    │  │  Metrics           │  │  Settings          │  │
 │  │  az cosmosdb show  │  │  az monitor        │  │  az monitor        │  │
-│  │  -n testingjv      │  │  metrics list      │  │  diagnostic-       │  │
+│  │  -n sample-cosmos      │  │  metrics list      │  │  diagnostic-       │  │
 │  │  -g rg             │  │  --metric:         │  │  settings list     │  │
 │  │                    │  │  TotalRequests     │  │                    │  │
 │  │  Returns:          │  │  NormalizedRU      │  │  Returns:          │  │
@@ -347,3 +347,4 @@ High 429 error rate               →     rules/monitoring-throttling.md
 ---
 
 *CosmosDBOps v1.1.0 Architecture | Azure MCP + cosmosdb-best-practices Integration*
+

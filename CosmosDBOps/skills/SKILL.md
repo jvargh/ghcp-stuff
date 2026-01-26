@@ -43,10 +43,10 @@ When CosmosDBOps detects runtime issues, reference the corresponding `cosmosdb-b
 ```
 🚨 ISSUE: High Request Throttling (429)
 
-WHAT: testingjv/TestDB/Orders - 25% requests throttled
+WHAT: sample-cosmos/TestDB/Orders - 25% requests throttled
 WHY:  Provisioned 400 RU/s, peak load 650 RU/s
 FIX:  az cosmosdb mongodb collection throughput update \
-        -a testingjv -g servicegroups-rg -d TestDB -n Orders \
+        -a sample-cosmos -g sample-rg -d TestDB -n Orders \
         --throughput 1000
 
 📚 BEST PRACTICE: monitoring-throttling
@@ -179,7 +179,7 @@ az monitor metrics list --resource <id> --metric "TotalRequests,TotalRequestUnit
 ## Azure Context
 | Field | Value |
 |-------|-------|
-| **Subscription ID** | 463a82d4-1896-4332-aeeb-618ee5a5aa93 |
+| **Subscription ID** | <SUBSCRIPTION_ID> |
 | **Subscription Name** | MySubscription |
 | **Tenant ID** | <tenant-guid> |
 | **Resource Group** | cosmosdb-rg |
@@ -548,3 +548,6 @@ Full mapping of CosmosDBOps detections to `cosmosdb-best-practices` rules at `~/
 ---
 
 *CosmosDBOps v1.1.0 | Powered by Azure MCP + cosmosdb-best-practices*
+
+
+

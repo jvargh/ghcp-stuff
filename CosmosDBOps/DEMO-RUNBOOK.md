@@ -45,7 +45,7 @@ az monitor metrics list --resource {each_account} --metric ServiceAvailability
 ```
 ✅ All systems green | 1 account | 0 throttling | 100% availability
 
-Account: testingjv (MongoDB 7.0)
+Account: sample-cosmos (MongoDB 7.0)
 Regions: East US 2, West US 2
 Status:  Online
 ```
@@ -54,10 +54,10 @@ Status:  Online
 ```
 ⚠️ Issues detected | 1 account | HIGH RU consumption
 
-Account: testingjv (MongoDB 7.0)
+Account: sample-cosmos (MongoDB 7.0)
 Status:  NormalizedRUConsumption at 100%
 
-Run /cosmosdb diagnose testingjv for details
+Run /cosmosdb diagnose sample-cosmos for details
 ```
 
 ---
@@ -68,14 +68,14 @@ Run /cosmosdb diagnose testingjv for details
 
 ### Command
 ```
-/cosmosdb diagnose testingjv
+/cosmosdb diagnose sample-cosmos
 ```
 
 ### What It Does (via Azure MCP)
 ```
-az cosmosdb show -n testingjv -g servicegroups-rg -o json
-az cosmosdb mongodb database list -a testingjv -g servicegroups-rg
-az cosmosdb mongodb collection list -a testingjv -g servicegroups-rg -d TestDB
+az cosmosdb show -n sample-cosmos -g sample-rg -o json
+az cosmosdb mongodb database list -a sample-cosmos -g sample-rg
+az cosmosdb mongodb collection list -a sample-cosmos -g sample-rg -d TestDB
 az monitor metrics list --resource {id} --metric TotalRequests,NormalizedRUConsumption,ServiceAvailability
 az monitor diagnostic-settings list --resource {id}
 ```
@@ -83,13 +83,13 @@ az monitor diagnostic-settings list --resource {id}
 ### Expected Output
 ```
 ═══════════════════════════════════════════════════════════════════════
-                    COSMOS DB DIAGNOSIS: testingjv
+                    COSMOS DB DIAGNOSIS: sample-cosmos
 ═══════════════════════════════════════════════════════════════════════
 
 ACCOUNT DETAILS
 ───────────────────────────────────────────────────────────────────────
-Account:         testingjv (MongoDB 7.0)
-Endpoint:        https://testingjv.documents.azure.com:443/
+Account:         sample-cosmos (MongoDB 7.0)
+Endpoint:        https://sample-cosmos.documents.azure.com:443/
 Regions:         East US 2 (write), West US 2 (read)
 Consistency:     Session
 Throughput:      400 RU/s (Manual) on TestDB/Orders
@@ -105,10 +105,10 @@ ISSUES DETECTED: 3
 ───────────────────────────────────────────────────────────────────────
 
 🔴 ISSUE 1: HIGH RU CONSUMPTION (100%)
-   WHAT: testingjv/TestDB/Orders hitting throughput ceiling
+   WHAT: sample-cosmos/TestDB/Orders hitting throughput ceiling
    WHY:  400 RU/s provisioned, demand exceeds capacity
    FIX:  az cosmosdb mongodb collection throughput migrate \
-           -a testingjv -g servicegroups-rg -d TestDB -n Orders \
+           -a sample-cosmos -g sample-rg -d TestDB -n Orders \
            --throughput-type autoscale
 
    📚 BEST PRACTICE: throughput-autoscale
@@ -125,7 +125,7 @@ ISSUES DETECTED: 3
 🟡 ISSUE 3: PUBLIC NETWORK ACCESS
    WHAT: publicNetworkAccess=Enabled, no IP rules
    WHY:  Database accessible from any IP
-   FIX:  az cosmosdb update -n testingjv -g servicegroups-rg \
+   FIX:  az cosmosdb update -n sample-cosmos -g sample-rg \
            --ip-range-filter "YOUR_IP"
 
 PASSING CHECKS: 10
@@ -147,13 +147,13 @@ SCORE: 77% (10/13 checks passing)
 
 ### Command
 ```
-/cosmosdb metrics testingjv --timespan 2h
+/cosmosdb metrics sample-cosmos --timespan 2h
 ```
 
 ### What It Does (via Azure MCP)
 ```
 az monitor metrics list \
-  --resource /subscriptions/.../databaseAccounts/testingjv \
+  --resource /subscriptions/.../databaseAccounts/sample-cosmos \
   --metric TotalRequests,TotalRequestUnits,NormalizedRUConsumption,ServiceAvailability,ServerSideLatency \
   --interval PT1H \
   --start-time {now-2h} \
@@ -162,7 +162,7 @@ az monitor metrics list \
 
 ### Expected Output
 ```
-📊 METRICS: testingjv (last 2 hours)
+📊 METRICS: sample-cosmos (last 2 hours)
 
 THROUGHPUT
 ─────────────────────────────────────────────────────
@@ -194,18 +194,18 @@ Service Availability: 100% ✅
 
 ### Command
 ```
-/cosmosdb throughput testingjv TestDB Orders
+/cosmosdb throughput sample-cosmos TestDB Orders
 ```
 
 ### What It Does (via Azure MCP)
 ```
 az cosmosdb mongodb collection throughput show \
-  -a testingjv -g servicegroups-rg -d TestDB -n Orders -o json
+  -a sample-cosmos -g sample-rg -d TestDB -n Orders -o json
 ```
 
 ### Expected Output
 ```
-📊 THROUGHPUT: testingjv/TestDB/Orders
+📊 THROUGHPUT: sample-cosmos/TestDB/Orders
 
 CURRENT SETTINGS
 ─────────────────────────────────────────────────────
@@ -226,7 +226,7 @@ Normalized RU:       100%
    Autoscale would adjust between 400-4000 RU/s based on demand.
 
    az cosmosdb mongodb collection throughput migrate \
-     -a testingjv -g servicegroups-rg -d TestDB -n Orders \
+     -a sample-cosmos -g sample-rg -d TestDB -n Orders \
      --throughput-type autoscale
 ```
 
@@ -238,13 +238,13 @@ Normalized RU:       100%
 
 ### Command
 ```
-/cosmosdb scale testingjv TestDB Orders --ru 1000
+/cosmosdb scale sample-cosmos TestDB Orders --ru 1000
 ```
 
 ### What It Does (via Azure MCP)
 ```
 az cosmosdb mongodb collection throughput update \
-  -a testingjv -g servicegroups-rg -d TestDB -n Orders \
+  -a sample-cosmos -g sample-rg -d TestDB -n Orders \
   --throughput 1000
 ```
 
@@ -252,7 +252,7 @@ az cosmosdb mongodb collection throughput update \
 ```
 ✅ THROUGHPUT UPDATED
 
-Account:    testingjv
+Account:    sample-cosmos
 Database:   TestDB
 Collection: Orders
 
@@ -273,16 +273,16 @@ Effective immediately.
 
 ### Command
 ```
-/cosmosdb case testingjv
+/cosmosdb case sample-cosmos
 ```
 
 ### What It Does (via Azure MCP)
 ```
 az account show
-az cosmosdb show -n testingjv -g servicegroups-rg
-az cosmosdb mongodb database list -a testingjv -g servicegroups-rg
-az cosmosdb mongodb collection list -a testingjv -g servicegroups-rg -d TestDB
-az cosmosdb mongodb collection throughput show -a testingjv -g servicegroups-rg -d TestDB -n Orders
+az cosmosdb show -n sample-cosmos -g sample-rg
+az cosmosdb mongodb database list -a sample-cosmos -g sample-rg
+az cosmosdb mongodb collection list -a sample-cosmos -g sample-rg -d TestDB
+az cosmosdb mongodb collection throughput show -a sample-cosmos -g sample-rg -d TestDB -n Orders
 az monitor metrics list --resource {id} --metric {all}
 az monitor diagnostic-settings list --resource {id}
 ```
@@ -295,23 +295,23 @@ az monitor diagnostic-settings list --resource {id}
 
 CASE SUMMARY
 ─────────────────────────────────────────────────────────────────────────────────
-Title:           Cosmos DB High RU Consumption & Best Practice Review - testingjv
+Title:           Cosmos DB High RU Consumption & Best Practice Review - sample-cosmos
 Severity:        🟡 Medium
 Generated:       2026-01-25T23:45:00Z
 Status:          Action Required
 
 AZURE CONTEXT
 ─────────────────────────────────────────────────────────────────────────────────
-Subscription ID:   463a82d4-1896-4332-aeeb-618ee5a5aa93
-Subscription Name: ME-MngEnvMCAP993834-varghesejoji-1
-Tenant ID:         5bb5fa45-2dcc-4310-bbc5-883021e9d84b
-Resource Group:    servicegroups-rg
-Resource URI:      /subscriptions/.../databaseAccounts/testingjv
+Subscription ID:   <SUBSCRIPTION_ID>
+Subscription Name: <SUBSCRIPTION_NAME>
+Tenant ID:         <TENANT_ID>
+Resource Group:    sample-rg
+Resource URI:      /subscriptions/.../databaseAccounts/sample-cosmos
 
 ACCOUNT DETAILS
 ─────────────────────────────────────────────────────────────────────────────────
-Account Name:      testingjv
-Endpoint:          https://testingjv.documents.azure.com:443/
+Account Name:      sample-cosmos
+Endpoint:          https://sample-cosmos.documents.azure.com:443/
 API Type:          MongoDB 7.0
 Consistency:       Session
 Write Region:      East US 2
@@ -370,9 +370,9 @@ SCORE: 77% (10/13 checks passing)
 
 ### What It Does (via Azure MCP)
 ```
-az cosmosdb show -n testingjv -g servicegroups-rg -o json > account-config.json
-az cosmosdb mongodb database list -a testingjv -g servicegroups-rg -o json > databases.json
-az cosmosdb mongodb collection list -a testingjv -g servicegroups-rg -d TestDB -o json > collections.json
+az cosmosdb show -n sample-cosmos -g sample-rg -o json > account-config.json
+az cosmosdb mongodb database list -a sample-cosmos -g sample-rg -o json > databases.json
+az cosmosdb mongodb collection list -a sample-cosmos -g sample-rg -d TestDB -o json > collections.json
 az monitor metrics list --resource {id} --metric {all} -o json > metrics.json
 az monitor activity-log list --resource-id {id} -o json > activity-log.json
 az monitor diagnostic-settings list --resource {id} -o json > diagnostic-settings.json
@@ -392,7 +392,7 @@ Collecting data via Azure MCP...
 ✅ Generating summary
 
 Archive created:
-~/Desktop/cosmosdb-logs-testingjv-2026-01-25-234500.zip
+~/Desktop/cosmosdb-logs-sample-cosmos-2026-01-25-234500.zip
 
 Contents:
 ─────────────────────────────────────────────────────
@@ -476,12 +476,12 @@ Output: Metrics data unavailable
 ```bash
 # Check diagnostic settings
 az monitor diagnostic-settings list \
-  --resource /subscriptions/.../databaseAccounts/testingjv
+  --resource /subscriptions/.../databaseAccounts/sample-cosmos
 
 # Enable if missing
 az monitor diagnostic-settings create \
   --name cosmosdb-diagnostics \
-  --resource /subscriptions/.../databaseAccounts/testingjv \
+  --resource /subscriptions/.../databaseAccounts/sample-cosmos \
   --metrics '[{"category":"Requests","enabled":true}]'
 ```
 
@@ -502,3 +502,6 @@ az monitor diagnostic-settings create \
 ---
 
 *CosmosDBOps v1.1.0 Demo Runbook | Azure MCP + cosmosdb-best-practices*
+
+
+

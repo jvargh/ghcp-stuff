@@ -172,10 +172,10 @@ When CosmosDBOps detects a runtime issue via Azure MCP, it references the corres
 ```
 🔴 ISSUE 1: HIGH RU CONSUMPTION (100%)
    ┌────────────────────────────────────────────────────────────────────────┐
-   │ WHAT: testingjv/TestDB/Orders hitting throughput ceiling               │
+   │ WHAT: sample-cosmos/TestDB/Orders hitting throughput ceiling               │
    │ WHY:  400 RU/s provisioned, demand exceeds capacity                    │
    │ FIX:  az cosmosdb mongodb collection throughput migrate \              │
-   │         -a testingjv -g servicegroups-rg -d TestDB -n Orders \         │
+   │         -a sample-cosmos -g sample-rg -d TestDB -n Orders \         │
    │         --throughput-type autoscale                                    │
    │                                                                        │
    │ 📚 BEST PRACTICE: throughput-autoscale                                 │
@@ -202,7 +202,7 @@ When CosmosDBOps detects a runtime issue via Azure MCP, it references the corres
 
 ### Input
 ```
-/cosmosdb case testingjv
+/cosmosdb case sample-cosmos
 ```
 
 ### Output
@@ -213,13 +213,13 @@ When CosmosDBOps detects a runtime issue via Azure MCP, it references the corres
 
 CASE SUMMARY
 ───────────────────────────────────────────────────────────────────────────────
-Title:           Cosmos DB High RU Consumption - testingjv
+Title:           Cosmos DB High RU Consumption - sample-cosmos
 Severity:        🟡 Medium
 Generated:       2026-01-25T23:20:15Z
 
 ACCOUNT DETAILS (via az cosmosdb show)
 ───────────────────────────────────────────────────────────────────────────────
-Account:         testingjv (MongoDB 7.0)
+Account:         sample-cosmos (MongoDB 7.0)
 Regions:         East US 2 (write), West US 2 (read)
 Throughput:      400 RU/s (Manual)
 
@@ -384,3 +384,6 @@ Step-by-step scenarios demonstrating all CosmosDBOps commands with real Azure MC
 ---
 
 *CosmosDBOps v1.1.0 | Runtime operations via Azure MCP, integrated with cosmosdb-best-practices*
+
+
+
