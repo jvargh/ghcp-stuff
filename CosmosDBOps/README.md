@@ -18,6 +18,7 @@ An incident response skill for Azure Cosmos DB that extends Microsoft's [cosmosd
 10. [Architecture Documentation](#architecture)
 11. [Demo Runbook](#demo-runbook)
 12. [Resources](#resources)
+13. [References](#references)
 
 ---
 
