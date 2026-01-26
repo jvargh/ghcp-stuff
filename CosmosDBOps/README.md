@@ -23,23 +23,23 @@ An incident response skill for Azure Cosmos DB that extends Microsoft's [cosmosd
 
 ## Why This Skill Exists
 
-Microsoft's **cosmosdb-agent-kit** provides 45+ best practice rules for code review, but it analyzes code files, not live Azure resources. When your database is throttling at 3 AM, you need runtime diagnostics.
+Microsoft's [**cosmosdb-agent-kit**](https://github.com/AzureCosmosDB/cosmosdb-agent-kit) provides 45+ best practice rules for code review, but it analyzes code files, not live Azure resources. When your database is throttling at 3 AM, you need runtime diagnostics.
 
 ```
-┌─────────────────────────────────────────────────────────────────────────┐
-│  cosmosdb-best-practices               CosmosDBOps                     │
-│  (Microsoft's cosmosdb-agent-kit)      (This Skill)                    │
-│  ────────────────────────────          ────────────                    │
-│                                                                         │
-│  ✅ "Is my partition key correct?"     ✅ "Why am I getting 429s?"     │
+┌──────────────────────────────────────────────────────────────────────────┐
+│  cosmosdb-best-practices               CosmosDBOps                       │
+│  (Microsoft's cosmosdb-agent-kit)      (This Skill)                      │
+│  ────────────────────────────          ────────────                      │
+│                                                                          │
+│  ✅ "Is my partition key correct?"     ✅ "Why am I getting 429s?"      │
 │  ✅ "Is my query efficient?"           ✅ "Where's the hot partition?"  │
 │  ✅ "Am I using the SDK right?"        ✅ "Generate a support case"     │
-│                                                                         │
+│                                                                          │
 │  📄 Analyzes: Code files (.cs, .js)    🌐 Queries: Azure MCP → ARM APIs │
 │  ⏰ When: Development                  ⏰ When: Production incidents    │
 │  📍 Location: ~/.copilot/skills/       📍 Location: ~/.copilot/skills/  │
-│      cosmosdb-best-practices/              CosmosDBOps/                 │
-└─────────────────────────────────────────────────────────────────────────┘
+│      cosmosdb-best-practices/              CosmosDBOps/                  │
+└──────────────────────────────────────────────────────────────────────────┘
 ```
 
 **CosmosDBOps fills the runtime gap** by using Azure MCP to query Azure Monitor metrics, account configuration, diagnostic logs and then links issues back to the relevant `cosmosdb-best-practices` rules for code-level remediation.
@@ -54,7 +54,7 @@ Microsoft's **cosmosdb-agent-kit** provides 45+ best practice rules for code rev
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │   ~/.copilot/skills/                                                    │
-│   ├── cosmosdb-best-practices/     ← Microsoft's skill (code review)   │
+│   ├── cosmosdb-best-practices/     ← Microsoft's skill (code review)    │
 │   │   ├── SKILL.md                                                      │
 │   │   ├── AGENTS.md                                                     │
 │   │   └── rules/                   ← 45+ best practice rules            │
@@ -77,7 +77,7 @@ Microsoft's **cosmosdb-agent-kit** provides 45+ best practice rules for code rev
 │   │ az cosmosdb mongodb ...    → Databases, collections, throughput │   │
 │   │ az monitor metrics list    → RU consumption, latency, 429s      │   │
 │   │ az monitor activity-log    → Recent management operations       │   │
-│   │ az monitor diagnostic-settings → Logging configuration         │   │
+│   │ az monitor diagnostic-settings → Logging configuration          │   │
 │   └─────────────────────────────────────────────────────────────────┘   │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -172,10 +172,10 @@ When CosmosDBOps detects a runtime issue via Azure MCP, it references the corres
 ```
 🔴 ISSUE 1: HIGH RU CONSUMPTION (100%)
    ┌────────────────────────────────────────────────────────────────────────┐
-   │ WHAT: sample-cosmos/TestDB/Orders hitting throughput ceiling               │
+   │ WHAT: sample-cosmos/TestDB/Orders hitting throughput ceiling           │
    │ WHY:  400 RU/s provisioned, demand exceeds capacity                    │
    │ FIX:  az cosmosdb mongodb collection throughput migrate \              │
-   │         -a sample-cosmos -g sample-rg -d TestDB -n Orders \         │
+   │         -a sample-cosmos -g sample-rg -d TestDB -n Orders \            │
    │         --throughput-type autoscale                                    │
    │                                                                        │
    │ 📚 BEST PRACTICE: throughput-autoscale                                 │
@@ -302,9 +302,9 @@ Include these sections:
 ### Complete Lifecycle Coverage
 
 ```
-┌─────────────────────────────────────────────────────────────────────────┐
+┌────────────────────────────────────────────────────────────────────────┐
 │  DEVELOPMENT                         PRODUCTION                        │
-│                                                                         │
+│                                                                        │
 │  cosmosdb-best-practices             CosmosDBOps + Azure MCP           │
 │  ─────────────────────────           ──────────────────────            │
 │  Analyzes your code:                 Queries live Azure:               │
@@ -316,7 +316,7 @@ Include these sections:
 │                            │                                           │
 │                            v                                           │
 │              FIX BOTH CODE AND CONFIG                                  │
-└─────────────────────────────────────────────────────────────────────────┘
+└────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
