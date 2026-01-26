@@ -382,6 +382,10 @@ Step-by-step scenarios demonstrating all CosmosDBOps commands with real Azure MC
 - **GitHub Copilot CLI**: https://docs.github.com/copilot/github-copilot-in-the-cli
 
 ---
+## References
+[Introducing the Azure Cosmos DB Agent Kit](https://devblogs.microsoft.com/cosmosdb/azure-cosmos-db-agent-kit-ai-coding-assistants/)
+
+---
 
 *CosmosDBOps v1.1.0 | Runtime operations via Azure MCP, integrated with cosmosdb-best-practices*
 
