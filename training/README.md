@@ -15,3 +15,6 @@ This folder contains both Markdown sources and HTML exports for the training mat
 
 ## Notes
 - HTML files are standalone and can be opened directly in a browser.
+
+## Related Datasheets
+- ../Datasheets/Datasheet-Workshop_GitHub_Copilot_for_Developers_Intermediate_English.pdf
