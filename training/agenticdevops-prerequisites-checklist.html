@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prerequisites Checklist - Agentic DevOps & Copilot Deep Dive Workshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .header-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .meta-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        .meta-item label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.3rem;
+        }
+        .meta-item strong {
+            font-size: 1.1rem;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        section h2 {
+            font-size: 1.6rem;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        section h3 {
+            font-size: 1.2rem;
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        section h3:first-of-type {
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        table th {
+            background: #667eea;
+            color: #fff;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        table tr:hover {
+            background: #f8f9ff;
+        }
+        table tr:last-child td {
+            border-bottom: none;
+        }
+        .overview {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        .overview p {
+            margin-bottom: 0.5rem;
+        }
+        .troubleshooting {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        .troubleshooting strong {
+            color: #856404;
+        }
+        .issue-item {
+            margin-bottom: 1.5rem;
+        }
+        .issue-item strong {
+            color: #856404;
+        }
+        .solution {
+            color: #555;
+            margin-top: 0.3rem;
+        }
+        .completion-summary {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 4px;
+        }
+        .completion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .status-item {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .status-item h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .status-item p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        footer {
+            background: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        .checkbox {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #667eea;
+            border-radius: 3px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Prerequisites Checklist</h1>
+            <p style="margin-bottom: 1.5rem;">Agentic DevOps & Copilot Deep Dive Workshop</p>
+            <div class="header-meta">
+                <div class="meta-item">
+                    <label>Workshop Date</label>
+                    <strong>[Insert Date]</strong>
+                </div>
+                <div class="meta-item">
+                    <label>Duration</label>
+                    <strong>6 hours</strong>
+                </div>
+                <div class="meta-item">
+                    <label>Status</label>
+                    <strong>[Complete/In Progress/Not Started]</strong>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2>Overview</h2>
+                <div class="overview">
+                    <p>This checklist ensures all participants and the organization are prepared for the workshop. Complete all items by the dates specified. Three team roles have action items: <strong>IT/Admin</strong>, <strong>Participants</strong>, and <strong>Organizer/Training Lead</strong>.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Section 1: IT/Admin Responsibilities (Complete 1 Week Before)</h2>
+
+                <h3>✓ Copilot Licenses</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Required</th>
+                            <th>Status</th>
+                            <th>Assigned To</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Verify all [count] participants have active GitHub Copilot licenses</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[IT/Admin name]</td>
+                            <td>Check GitHub Org → Settings → Copilot to confirm license count</td>
+                        </tr>
+                        <tr>
+                            <td>Ensure licenses are not trials (must be paid licenses)</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[IT/Admin name]</td>
+                            <td>Trials do not have full Agent capabilities</td>
+                        </tr>
+                        <tr>
+                            <td>Document any participants without licenses</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[IT/Admin name]</td>
+                            <td>Flag early so we can plan workarounds</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>✓ Copilot Coding Agent (Labs 1 & 3)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Required</th>
+                            <th>Status</th>
+                            <th>Assigned To</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Verify Copilot Coding Agent is enabled at org level</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[Admin name]</td>
+                            <td>GitHub Org → Settings → Copilot → Enable Coding Agent</td>
+                        </tr>
+                        <tr>
+                            <td>Confirm org policy allows Actions workflows to run</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[Admin name]</td>
+                            <td>Labs depend on GitHub Actions execution</td>
+                        </tr>
+                        <tr>
+                            <td>Test: Create a test issue and assign to Copilot to verify workflow triggers</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[Admin/Tech name]</td>
+                            <td>If it fails, troubleshoot before workshop</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>✓ Agent Mode in VS Code (Labs 2 & 4)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Required</th>
+                            <th>Status</th>
+                            <th>Assigned To</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Confirm Copilot Chat extension is available in your VS Code installation</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[IT/Admin name]</td>
+                            <td>Check if VS Code extensions are restricted or centrally managed</td>
+                        </tr>
+                        <tr>
+                            <td>Verify org allows local GitHub Copilot Chat extension</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[IT/Admin name]</td>
+                            <td>If extension marketplace is blocked, flag immediately</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>✓ GitHub Advanced Security (Lab 3 Only)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Required</th>
+                            <th>Status</th>
+                            <th>Assigned To</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Enable GitHub Advanced Security for the repositories participants will use</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[Admin name]</td>
+                            <td>GitHub Org → Settings → Security → Enable CodeQL</td>
+                        </tr>
+                        <tr>
+                            <td>Verify CodeQL scans are running (or can be triggered manually)</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[Admin/Tech name]</td>
+                            <td>Lab 3 depends on security alerts</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>✓ MCP Server Access (Labs 3 & 4)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Required</th>
+                            <th>Status</th>
+                            <th>Assigned To</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Confirm MCP server functionality is enabled/available in your environment</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[Admin name]</td>
+                            <td>Check with GitHub/Copilot team if unsure</td>
+                        </tr>
+                        <tr>
+                            <td>Verify no network policies block MCP server connections</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[Network/Admin name]</td>
+                            <td>MCP integrations may require specific firewall rules</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>✓ Repository Access (All Labs)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Required</th>
+                            <th>Status</th>
+                            <th>Assigned To</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Confirm participants have permissions to create repositories</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[Admin name]</td>
+                            <td>GitHub Org → Member Permissions → Allow repo creation</td>
+                        </tr>
+                        <tr>
+                            <td>Verify participants can access the template repository</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>[Admin name]</td>
+                            <td>[Insert template repo URL]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Section 2: Participant Responsibilities</h2>
+
+                <h3>✓ GitHub Account Setup (Complete 2 Weeks Before)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Required</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Create/verify GitHub account at [github.com or Enterprise URL]</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>If using GitHub Enterprise, use company GitHub instance</td>
+                        </tr>
+                        <tr>
+                            <td>Verify GitHub Copilot is enabled on your account</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Settings → Copilot → Confirm access</td>
+                        </tr>
+                        <tr>
+                            <td>Set display name and profile picture (optional)</td>
+                            <td>No</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Helps with team collaboration</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>✓ Local Development Environment (Complete 2 Days Before)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Required</th>
+                            <th>Details</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4"><strong>VS Code (or GitHub Codespaces) Installation</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Install latest VS Code</td>
+                            <td>Yes</td>
+                            <td>Download from https://code.visualstudio.com</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Install GitHub Copilot Chat extension</td>
+                            <td>Yes</td>
+                            <td>Search "GitHub Copilot Chat" in VS Code extensions</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Verify Agent Mode is available</td>
+                            <td>Yes</td>
+                            <td>Open Copilot panel and look for Agent Mode selector</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td><em>OR</em> Use GitHub Codespaces instead</td>
+                            <td>Optional</td>
+                            <td>If local VS Code is not available, use Codespaces</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Node.js & npm Setup</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Install Node.js v18+</td>
+                            <td>Yes</td>
+                            <td>Download from https://nodejs.org (LTS version)</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Verify npm is installed</td>
+                            <td>Yes</td>
+                            <td>Run <code>npm --version</code> in terminal</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Git Setup</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Install Git</td>
+                            <td>Yes</td>
+                            <td>Download from https://git-scm.com</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Configure Git username</td>
+                            <td>Yes</td>
+                            <td>Run <code>git config --global user.name "Your Name"</code></td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Configure Git email</td>
+                            <td>Yes</td>
+                            <td>Run <code>git config --global user.email "your@email.com"</code></td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Browser</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Install modern browser (Chrome, Firefox, Safari, Edge)</td>
+                            <td>Yes</td>
+                            <td>Required for GitHub.com operations</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>✓ Test Setup (Complete 1 Day Before)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Required</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Clone the template repository locally</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td><code>git clone [template-repo-url]</code></td>
+                        </tr>
+                        <tr>
+                            <td>Run <code>npm install</code> in backend folder</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Test that dependencies install</td>
+                        </tr>
+                        <tr>
+                            <td>Run <code>npm install</code> in frontend folder</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Test that dependencies install</td>
+                        </tr>
+                        <tr>
+                            <td>Start backend: <code>npm start</code> (in backend folder)</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Verify no errors; should run on localhost:3001</td>
+                        </tr>
+                        <tr>
+                            <td>Start frontend: <code>npm run dev</code> (in frontend folder, new terminal)</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Verify no errors; should run on localhost:5173</td>
+                        </tr>
+                        <tr>
+                            <td>Open http://localhost:5173 in browser</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Confirm application loads</td>
+                        </tr>
+                        <tr>
+                            <td>Test Git access: Create a test branch and push to GitHub</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Ensures you have push permissions</td>
+                        </tr>
+                        <tr>
+                            <td>Stop local servers (Ctrl+C) before workshop day</td>
+                            <td>Yes</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>We will restart them during labs</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>✓ Knowledge Verification (Self-Assessment)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Topic</th>
+                            <th>Expected Level</th>
+                            <th>Self-Assessment</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Git/GitHub basics</td>
+                            <td>Comfortable with clone, commit, push, PR workflows</td>
+                            <td>☐ Comfortable / ☐ Need Review</td>
+                            <td><a href="https://docs.github.com/en/get-started" target="_blank">GitHub Basics Tutorial</a></td>
+                        </tr>
+                        <tr>
+                            <td>Basic web development</td>
+                            <td>Understand frontend/backend concepts</td>
+                            <td>☐ Comfortable / ☐ Need Review</td>
+                            <td>Familiarity with REST APIs helpful</td>
+                        </tr>
+                        <tr>
+                            <td>VS Code navigation</td>
+                            <td>Comfortable with file explorer, terminal, extensions</td>
+                            <td>☐ Comfortable / ☐ Need Review</td>
+                            <td><a href="https://code.visualstudio.com/docs/introvideos/basics" target="_blank">VS Code Tour</a></td>
+                        </tr>
+                        <tr>
+                            <td>REST APIs</td>
+                            <td>Basic understanding of HTTP methods</td>
+                            <td>☐ Comfortable / ☐ Need Review</td>
+                            <td>Understand GET, POST, PUT concepts</td>
+                        </tr>
+                        <tr>
+                            <td>GitHub Copilot basics</td>
+                            <td>Some hands-on experience with code completion or chat</td>
+                            <td>☐ Comfortable / ☐ Need Review</td>
+                            <td>Play with Copilot before workshop</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Section 3: Organizer/Training Lead Responsibilities</h2>
+
+                <h3>✓ Pre-Workshop Coordination (Complete 1 Week Before)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Owner</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Send this checklist to all participants</td>
+                            <td>Training Lead</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Include completion deadline (2 days before workshop)</td>
+                        </tr>
+                        <tr>
+                            <td>Collect status updates from IT/Admin on org-level setup</td>
+                            <td>Training Lead</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Confirm Licenses, Coding Agent, GHAS are ready</td>
+                        </tr>
+                        <tr>
+                            <td>Send test repository link to all participants</td>
+                            <td>Training Lead</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Ensure everyone can clone and test locally</td>
+                        </tr>
+                        <tr>
+                            <td>Collect participant completion confirmations</td>
+                            <td>Training Lead</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Follow up on any blockers</td>
+                        </tr>
+                        <tr>
+                            <td>Prepare setup troubleshooting guide</td>
+                            <td>Training Lead</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>For common issues participants may encounter</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>✓ Day-Before Verification (Complete 1 Day Before)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Owner</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Send final reminder email with Zoom/meeting link</td>
+                            <td>Training Lead</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Include setup verification link</td>
+                        </tr>
+                        <tr>
+                            <td>Verify trainer/instructor environment is ready</td>
+                            <td>Training Lead</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Test all demo scenarios on instructor machine</td>
+                        </tr>
+                        <tr>
+                            <td>Confirm demo repositories are accessible</td>
+                            <td>Trainer</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Test cloning, issue creation, PR workflows</td>
+                        </tr>
+                        <tr>
+                            <td>Test Copilot Coding Agent workflow end-to-end</td>
+                            <td>Trainer</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Create issue → Assign → Check Actions → Review PR</td>
+                        </tr>
+                        <tr>
+                            <td>Test Agent Mode in VS Code</td>
+                            <td>Trainer</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Verify extension, Agent Mode selector, chat features</td>
+                        </tr>
+                        <tr>
+                            <td>Test MCP server integration (if using in labs)</td>
+                            <td>Trainer</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Verify connections and tool availability</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>✓ Day-Of Setup (Complete 30 Min Before Workshop Starts)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Owner</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Log into video conference 15 minutes early</td>
+                            <td>Trainer</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Test audio, video, screen sharing</td>
+                        </tr>
+                        <tr>
+                            <td>Have backup terminal windows open with necessary commands</td>
+                            <td>Trainer</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Ready to run demos without delays</td>
+                        </tr>
+                        <tr>
+                            <td>Display this checklist for participant reference (optional)</td>
+                            <td>Trainer</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Helps participants remember what to have installed</td>
+                        </tr>
+                        <tr>
+                            <td>Have participants do a 5-minute tech check</td>
+                            <td>Trainer</td>
+                            <td><input type="checkbox" class="checkbox"></td>
+                            <td>Confirm they can see screen, hear audio, access repos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Troubleshooting & Support</h2>
+                <div class="troubleshooting">
+                    <div class="issue-item">
+                        <strong>Issue:</strong> Copilot license error<br>
+                        <div class="solution"><strong>Solution:</strong> Contact IT to verify license assignment. Licenses can take up to 24 hours to activate.</div>
+                    </div>
+
+                    <div class="issue-item">
+                        <strong>Issue:</strong> Coding Agent not available<br>
+                        <div class="solution"><strong>Solution:</strong> Confirm with GitHub org admin that Copilot Coding Agent is enabled. May require GitHub Enterprise.</div>
+                    </div>
+
+                    <div class="issue-item">
+                        <strong>Issue:</strong> Node.js or npm errors during npm install<br>
+                        <div class="solution"><strong>Solution:</strong> Ensure Node.js v18+ is installed. Run <code>node --version</code> and <code>npm --version</code>. Reinstall if needed.</div>
+                    </div>
+
+                    <div class="issue-item">
+                        <strong>Issue:</strong> Can't clone repository<br>
+                        <div class="solution"><strong>Solution:</strong> Verify Git is installed (<code>git --version</code>). Check SSH key setup or use HTTPS clone URL instead.</div>
+                    </div>
+
+                    <div class="issue-item">
+                        <strong>Issue:</strong> Port 3001 or 5173 already in use<br>
+                        <div class="solution"><strong>Solution:</strong> Modify the port in package.json, or stop other applications using those ports.</div>
+                    </div>
+
+                    <div class="issue-item">
+                        <strong>Issue:</strong> VS Code extension not installing<br>
+                        <div class="solution"><strong>Solution:</strong> Check if extension marketplace is blocked by IT. Codespaces or GitHub Copilot web interface are alternatives.</div>
+                    </div>
+
+                    <p style="margin-top: 1.5rem;"><strong>Contact:</strong> [Training Lead Email] or [Support Channel]</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Completion Summary</h2>
+                <div class="completion-summary">
+                    <table style="margin-bottom: 1rem;">
+                        <thead>
+                            <tr>
+                                <th>Role</th>
+                                <th>Owner</th>
+                                <th>Deadline</th>
+                                <th>Completed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>IT/Admin Setup</td>
+                                <td>[Name]</td>
+                                <td>1 week before</td>
+                                <td><input type="checkbox" class="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Participant Setup</td>
+                                <td>All participants</td>
+                                <td>2 days before</td>
+                                <td><input type="checkbox" class="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Final Verification</td>
+                                <td>Training Lead</td>
+                                <td>1 day before</td>
+                                <td><input type="checkbox" class="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>Day-Of Tech Check</td>
+                                <td>Trainer</td>
+                                <td>Day of (30 min early)</td>
+                                <td><input type="checkbox" class="checkbox"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Final Status:</strong> Ready for workshop ☐ / Blockers remain ☐</p>
+                    <p style="margin-top: 1rem;">If blockers remain, contact <strong>[Training Lead Email]</strong> immediately.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 GitHub Copilot Developer Workshop | Agentic DevOps & Copilot Deep Dive</p>
+        </footer>
+    </div>
+</body>
+</html>

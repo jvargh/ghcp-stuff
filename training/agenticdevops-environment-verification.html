@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment Verification Plan - Agentic DevOps &amp; Copilot Deep Dive Workshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .meta span {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 4px;
+            display: block;
+        }
+        main {
+            padding: 2rem;
+        }
+        h2 {
+            font-size: 1.6rem;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        p { margin-bottom: 0.8rem; }
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 2rem 0;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow: auto;
+            margin: 0.8rem 0 1.2rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            border: 1px solid #e6e6e6;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        ul { margin: 0.5rem 0 1rem 1.25rem; }
+        li { margin-bottom: 0.4rem; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 0.95rem;
+        }
+        table th {
+            background: #667eea;
+            color: #fff;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        table tr:hover { background: #f8f9ff; }
+        table tr:last-child td { border-bottom: none; }
+        .status { font-weight: 600; }
+        .reference {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .reference a {
+            color: #2457b2;
+            text-decoration: none;
+        }
+        .reference a:hover { text-decoration: underline; }
+        .signoff strong { display: inline-block; width: 140px; }
+        footer {
+            background: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        @media (max-width: 720px) {
+            body { padding: 1rem; }
+            header, main, footer { padding: 1.5rem; }
+            header h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Environment Verification Plan - Agentic DevOps &amp; Copilot Deep Dive Workshop</h1>
+            <div class="meta">
+                <span><strong>Workshop Date:</strong> [Insert Date]</span>
+                <span><strong>Verification Deadline:</strong> 1 day before workshop</span>
+                <span><strong>Contact for Issues:</strong> [Training Lead Email]</span>
+            </div>
+        </header>
+        <main>
+            <h2>Overview</h2>
+            <p>This document provides step-by-step instructions to verify that your environment is ready for the workshop. Each section corresponds to a specific component. Complete all sections and verify each checkpoint before workshop day.</p>
+
+            <hr>
+
+            <h2>Phase 1: GitHub Account &amp; Copilot Access (IT/Admin + Participant)</h2>
+            <h3>Step 1.1: Verify GitHub Account</h3>
+            <p><strong>Participant Action:</strong></p>
+            <pre><code># 1. Go to https://github.com (or your GitHub Enterprise URL)
+# 2. Sign in with your GitHub account
+# 3. Verify you can access the organization/team page</code></pre>
+            <p><strong>Expected Result:</strong> You are logged in and can see your GitHub organizations.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h3>Step 1.2: Verify Copilot License</h3>
+            <p><strong>Participant Action:</strong></p>
+            <pre><code>1. Go to GitHub.com or GitHub Enterprise
+2. Click your profile icon (top right) → Settings
+3. Navigate to GitHub Copilot (left sidebar)
+4. Verify "GitHub Copilot" shows as active/enabled
+5. Note: If you see a prompt to purchase, contact IT</code></pre>
+            <p><strong>Expected Result:</strong> Copilot access is confirmed in your settings.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+            <p><strong>IT/Admin Action (verification):</strong></p>
+            <pre><code>1. Go to GitHub Organization Settings
+2. Navigate to Billing & Plans → Copilot
+3. Under "Copilot Seats", verify all workshop participants are assigned licenses
+4. Check that no licenses are in "Trial" status</code></pre>
+            <p><strong>Expected Result:</strong> All participants have active (non-trial) Copilot licenses.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h2>Phase 2: GitHub Copilot Coding Agent (Labs 1 &amp; 3)</h2>
+            <h3>Step 2.1: Verify Coding Agent is Enabled (IT/Admin)</h3>
+            <pre><code>1. Go to GitHub Organization Settings
+2. In the sidebar, select Copilot → Policies
+3. Set the "Copilot coding agent" policy to Enabled
+4. If your org uses MCP on GitHub.com, set "MCP servers on GitHub.com" to Enabled
+5. If your org is part of an enterprise, confirm enterprise policies allow these settings
+6. (Optional) Copilot → Coding agent → Repository access: confirm repos are set to All or Selected</code></pre>
+            <p class="reference">Reference: <a href="https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/add-copilot-coding-agent">https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/add-copilot-coding-agent</a></p>
+            <p><strong>Expected Result:</strong> Coding Agent is enabled at the organization level.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h3>Step 2.2: Test Coding Agent Workflow (Participant + Trainer)</h3>
+            <p><strong>Create a test repository (or use existing):</strong></p>
+            <pre><code># 1. Create a new repository (or use template: [template-repo-URL])
+# 2. Clone locally: git clone &lt;repo-url&gt;
+# 3. Navigate to the repo on GitHub.com</code></pre>
+            <p><strong>Test Assignment:</strong></p>
+            <pre><code>1. Go to the repo → Issues tab
+2. Create a new issue with title: "Test: Add a simple feature"
+3. Leave the issue open
+4. Assign the issue to Copilot (or use @copilot command if available)
+5. Look for the 👀 emoji reaction—confirms Copilot received the assignment</code></pre>
+            <p><strong>Monitor Workflow:</strong></p>
+            <pre><code>1. Go to the repo → Actions tab
+2. Look for a workflow run titled something like "GitHub Copilot - ..." or "copilot-swe-agent"
+3. Click into the run and monitor the logs
+4. Wait for the workflow to complete (3-7 minutes typically)
+5. Once complete, go back to the issue and check for a Pull Request link</code></pre>
+            <p><strong>Review the Result:</strong></p>
+            <pre><code>1. Open the Pull Request created by Copilot
+2. Review the code changes in the PR
+3. Verify the changes make sense (even if they're not perfect)
+4. Note any error messages or issues</code></pre>
+            <p><strong>Expected Result:</strong> Workflow runs, PR is created, and Copilot reasoning is visible in the PR timeline.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+            <p><strong>If Workflow Fails:</strong></p>
+            <ul>
+                <li>Verify org-level permissions allow Actions workflows</li>
+                <li>Check that Coding Agent is enabled (see Step 2.1)</li>
+                <li>Confirm no org policies are blocking the workflow</li>
+                <li>Contact IT or [Training Lead Email]</li>
+            </ul>
+
+            <hr>
+
+            <h2>Phase 3: Agent Mode in VS Code (Labs 2 &amp; 4)</h2>
+            <h3>Step 3.1: Install VS Code &amp; Extensions (Participant)</h3>
+            <pre><code># 1. Download and install latest VS Code from https://code.visualstudio.com
+# 2. Open VS Code
+# 3. Go to Extensions (Ctrl+Shift+X on Windows/Linux, Cmd+Shift+X on Mac)
+# 4. Search "GitHub Copilot Chat"
+# 5. Install the extension
+# 6. Reload VS Code if prompted</code></pre>
+            <p><strong>Expected Result:</strong> VS Code is installed and Copilot Chat extension is visible in extensions list.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h3>Step 3.2: Verify Agent Mode is Available (Participant)</h3>
+            <pre><code>1. Open VS Code
+2. Open the Copilot Chat panel (Ctrl+Shift+I on Windows/Linux, Cmd+Shift+I on Mac)
+3. Look for an "Agent Mode" selector or toggle (usually near the chat input)
+4. Verify it shows as available
+5. Type a simple prompt: "Hello"
+6. Verify Copilot Chat responds</code></pre>
+            <p><strong>Expected Result:</strong> Chat panel opens, Agent Mode option is visible, and Copilot responds to prompts.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+            <p><strong>If Agent Mode is Not Available:</strong></p>
+            <ul>
+                <li>Update VS Code to latest version</li>
+                <li>Reinstall GitHub Copilot Chat extension</li>
+                <li>Check with IT—your org may have extension restrictions</li>
+                <li>Consider using GitHub Codespaces as alternative</li>
+            </ul>
+
+            <hr>
+
+            <h3>Step 3.3: Test Agent Mode with Codebase (Participant)</h3>
+            <pre><code>1. Open the test repository in VS Code (File → Open Folder)
+2. Open Copilot Chat panel (Ctrl+Shift+I)
+3. Type the prompt: #codebase
+4. Press Enter—this provides context from your repository
+5. Ask a simple question: "What does this project do?"
+6. Verify Copilot scans files and responds with context</code></pre>
+            <p><strong>Expected Result:</strong> Copilot scans the codebase and provides a relevant response.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h2>Phase 4: Local Development Environment (Participant)</h2>
+            <h3>Step 4.1: Install Node.js &amp; npm</h3>
+            <pre><code># 1. Download Node.js v18+ LTS from https://nodejs.org
+# 2. Run the installer and follow prompts
+# 3. Verify installation:
+node --version
+npm --version
+# Both should show version numbers (e.g., v18.16.0 and 9.0.0)</code></pre>
+            <p><strong>Expected Result:</strong> Node.js v18+ and npm are installed and accessible from terminal.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h3>Step 4.2: Install Git</h3>
+            <pre><code># 1. Download Git from https://git-scm.com
+# 2. Run the installer (use default options)
+# 3. Verify installation:
+git --version
+# Should show version (e.g., git version 2.40.0)
+
+# 4. Configure Git (one-time):
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+
+# 5. Verify configuration:
+git config --list | grep user</code></pre>
+            <p><strong>Expected Result:</strong> Git is installed and configured with your name and email.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h3>Step 4.3: Clone &amp; Test Repository</h3>
+            <pre><code># 1. Create a workspace folder for the workshop:
+mkdir workshop
+cd workshop
+
+# 2. Clone the template repository:
+git clone &lt;template-repo-url&gt;
+cd &lt;repo-name&gt;
+
+# 3. Verify the clone was successful:
+ls -la  # You should see folders like backend, frontend, .github, etc.</code></pre>
+            <p><strong>Expected Result:</strong> Repository is cloned and directory structure is visible.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h3>Step 4.4: Install Dependencies</h3>
+            <pre><code># Backend setup:
+cd backend
+npm install
+npm start
+# Expected: Backend starts on http://localhost:3001 (or similar port)
+# Leave it running for now
+
+# In a new terminal, frontend setup:
+cd frontend
+npm install
+npm run dev
+# Expected: Frontend starts on http://localhost:5173 (or similar port)</code></pre>
+            <p><strong>Expected Result:</strong> Both npm install commands complete without errors.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h3>Step 4.5: Test the Application</h3>
+            <pre><code># 1. Open your browser
+# 2. Go to http://localhost:5173
+# 3. You should see the application UI (e.g., book list)
+# 4. Try clicking around—verify the app is responsive
+# 5. Check browser console (F12) for any errors</code></pre>
+            <p><strong>Expected Result:</strong> Application loads in browser without critical errors.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+            <p><strong>Closing the Application:</strong></p>
+            <pre><code># In both terminals where backend and frontend are running, press Ctrl+C to stop
+# Both should shut down without errors</code></pre>
+
+            <hr>
+
+            <h2>Phase 5: GitHub Advanced Security (Lab 3 - Optional)</h2>
+            <h3>Step 5.1: Enable CodeQL (Admin)</h3>
+            <pre><code>1. Go to the repository → Settings
+2. In the sidebar, under "Security", select Code quality
+3. Click Enable code quality
+4. Review settings (languages and runner type)
+5. Click Save changes
+6. Wait for the first analysis run to complete</code></pre>
+            <p class="reference">Reference: <a href="https://docs.github.com/en/code-security/how-tos/maintain-quality-code/enable-code-quality">https://docs.github.com/en/code-security/how-tos/maintain-quality-code/enable-code-quality</a></p>
+            <p><strong>Expected Result:</strong> CodeQL workflow is triggered and scans are running.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h3>Step 5.2: Verify Security Alerts (Admin/Participant)</h3>
+            <pre><code>1. Go to the repository → Security tab → Code scanning alerts
+2. Wait for CodeQL to complete its scan (5-10 minutes)
+3. You should see at least one alert (or optionally zero if code is very clean)
+4. If alerts appear, note the alert title and severity
+5. This is what we will use in Lab 3 for remediation</code></pre>
+            <p><strong>Expected Result:</strong> CodeQL scan completes and alerts are visible (or confirmed as zero).<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h2>Phase 6: MCP Server Access (Lab 4 - Optional)</h2>
+            <h3>Step 6.1: Verify MCP Configuration (Admin/Trainer)</h3>
+            <pre><code>1. Confirm prerequisites: GitHub account, Visual Studio Code, and (for Business/Enterprise) "MCP servers in Copilot" policy enabled
+2. In VS Code, open Extensions (Ctrl+Shift+X / Cmd+Shift+X)
+3. In the Extensions search bar, click the filter icon and select "MCP Server"
+4. Search for "github" and select the GitHub MCP server
+5. Click Install
+6. Open Command Palette and run "MCP: List Servers" to verify "github" is listed</code></pre>
+            <p class="reference">Reference: <a href="https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp/set-up-the-github-mcp-server">https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp/set-up-the-github-mcp-server</a></p>
+            <p><strong>Expected Result:</strong> MCP server access is confirmed and accessible.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h2>Phase 7: Permission &amp; Access Verification (Admin)</h2>
+            <h3>Step 7.1: Verify Repository Creation Rights</h3>
+            <pre><code>1. Ask a participant to create a new test repository in the org
+2. Steps:
+   - Go to GitHub Org page
+   - Click "+ New" → New repository
+   - If this option is grayed out, participant lacks permissions
+   - If successful, repository is created
+3. Contact IT if participants cannot create repos</code></pre>
+            <p><strong>Expected Result:</strong> Participants can create repositories within the organization.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h3>Step 7.2: Verify Participant Access to Template Repository</h3>
+            <pre><code>1. Share the template repository URL with all participants
+2. Each participant goes to the URL and clicks "Use this template" → "Create a new repository"
+3. If access is denied, verify:
+   - Participant is part of the GitHub organization
+   - Org policies allow repository creation
+   - Template repository is not private (or participants have access)</code></pre>
+            <p><strong>Expected Result:</strong> All participants can clone/template the repository.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h2>Phase 8: Pre-Workshop Verification Call (Optional)</h2>
+            <h3>Step 8.1: Schedule 30-Min Verification Call (Trainer + IT/Admin)</h3>
+            <pre><code>1. Schedule a brief video call 1-2 days before the workshop
+2. Agenda:
+   - Confirm all org-level setup is complete (Licenses, Coding Agent, GHAS)
+   - Address any participant blockers
+   - Walk through any custom process (e.g., MCP integration)
+   - Answer questions about the labs
+3. Document any remaining issues and mitigation plans</code></pre>
+            <p><strong>Expected Result:</strong> Call is held and blockers are identified/resolved.<br>
+            <span class="status">Status:</span> ☐ Complete</p>
+
+            <hr>
+
+            <h2>Final Verification Checklist</h2>
+            <h3>All Phases Complete?</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Phase 1</td>
+                        <td>GitHub Account &amp; Copilot License</td>
+                        <td>☐ Complete</td>
+                    </tr>
+                    <tr>
+                        <td>Phase 2</td>
+                        <td>Coding Agent Workflow</td>
+                        <td>☐ Complete</td>
+                    </tr>
+                    <tr>
+                        <td>Phase 3</td>
+                        <td>Agent Mode in VS Code</td>
+                        <td>☐ Complete</td>
+                    </tr>
+                    <tr>
+                        <td>Phase 4</td>
+                        <td>Local Dev Environment (Node.js, Git, App)</td>
+                        <td>☐ Complete</td>
+                    </tr>
+                    <tr>
+                        <td>Phase 5</td>
+                        <td>GitHub Advanced Security (optional)</td>
+                        <td>☐ Complete</td>
+                    </tr>
+                    <tr>
+                        <td>Phase 6</td>
+                        <td>MCP Access (optional)</td>
+                        <td>☐ Complete</td>
+                    </tr>
+                    <tr>
+                        <td>Phase 7</td>
+                        <td>Permissions &amp; Access</td>
+                        <td>☐ Complete</td>
+                    </tr>
+                    <tr>
+                        <td>Phase 8</td>
+                        <td>Pre-Workshop Call (optional)</td>
+                        <td>☐ Complete</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2>Troubleshooting Guide</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>Verification Step</th>
+                        <th>Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Copilot license not showing</td>
+                        <td>Step 1.2</td>
+                        <td>Contact IT—license activation takes 24 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Coding Agent workflow doesn't trigger</td>
+                        <td>Step 2.2</td>
+                        <td>Verify Coding Agent enabled (Step 2.1); check org policies</td>
+                    </tr>
+                    <tr>
+                        <td>Agent Mode not available in VS Code</td>
+                        <td>Step 3.2</td>
+                        <td>Update VS Code; reinstall extension; check IT firewall rules</td>
+                    </tr>
+                    <tr>
+                        <td>npm install fails</td>
+                        <td>Step 4.4</td>
+                        <td>Delete <code>node_modules</code> folder and retry; ensure Node.js v18+</td>
+                    </tr>
+                    <tr>
+                        <td>Repository not cloning</td>
+                        <td>Step 4.3</td>
+                        <td>Verify SSH key setup or use HTTPS URL instead; check Git config</td>
+                    </tr>
+                    <tr>
+                        <td>Port 3001/5173 in use</td>
+                        <td>Step 4.4</td>
+                        <td>Stop other applications using those ports or modify in package.json</td>
+                    </tr>
+                    <tr>
+                        <td>CodeQL scan doesn't run</td>
+                        <td>Step 5.1</td>
+                        <td>Verify GitHub Advanced Security is enabled; wait another 5 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>MCP server connection fails</td>
+                        <td>Step 6.1</td>
+                        <td>Check network firewall; verify MCP server is deployed and running</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2>Sign-Off</h2>
+            <p class="signoff"><strong>Participant:</strong> ___________________________  Date: _______________</p>
+            <p class="signoff"><strong>IT/Admin:</strong> ___________________________  Date: _______________</p>
+            <p class="signoff"><strong>Training Lead:</strong> ___________________________  Date: _______________</p>
+            <p><strong>All verifications complete?</strong> YES ☐ / NO ☐</p>
+            <p>If NO, describe remaining issues and escalation plan:</p>
+            <hr>
+            <hr>
+            <hr>
+
+            <h2>Support &amp; Contact</h2>
+            <p><strong>For technical issues:</strong> [Training Lead Email]</p>
+            <p><strong>For org-level access:</strong> [IT/Admin Contact]</p>
+            <p><strong>For Copilot licensing:</strong> [GitHub Account Manager or Support]</p>
+            <p>See attached troubleshooting guide for common issues.</p>
+        </main>
+        <footer>&copy; 2026 Agentic DevOps &amp; Copilot Deep Dive Workshop</footer>
+    </div>
+</body>
+</html>

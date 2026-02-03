@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Copilot Developer - 1-Day Schedule</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        main {
+            padding: 2rem;
+        }
+        .session {
+            margin-bottom: 2.5rem;
+            border-left: 4px solid #667eea;
+            padding-left: 1.5rem;
+        }
+        .session h2 {
+            font-size: 1.4rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .session ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        .session li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .session li:before {
+            content: "•";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .session ul ul {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .session ul ul li {
+            margin-bottom: 0.4rem;
+            padding-left: 2rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .lunch {
+            background: #fff9e6;
+            border-left-color: #ffc107 !important;
+        }
+        .lunch h2 {
+            color: #ffa500 !important;
+        }
+        .lab {
+            background: #e8f5e9;
+            border-left-color: #4caf50 !important;
+        }
+        .lab h2 {
+            color: #4caf50 !important;
+        }
+        footer {
+            background: #f8f9fa;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub Copilot Developer</h1>
+            <p>1-Day Schedule (9:00 AM - 5:00 PM)</p>
+        </header>
+
+        <main>
+            <div class="session">
+                <h2>9:00-10:00 | Presentation: Welcome, goals, and agenda</h2>
+                <ul>
+                    <li>Welcome, instructor intro, participant intros</li>
+                    <li>Session learning objectives
+                        <ul>
+                            <li>Apply context and prompt engineering techniques</li>
+                            <li>Optimize Copilot with custom responses, model switching, and agent techniques</li>
+                            <li>Leverage Copilot Chat features such as MCP, coding agent, and Copilot Spaces</li>
+                        </ul>
+                    </li>
+                    <li>What we will not cover
+                        <ul>
+                            <li>Usage statistics, customer success cases, admin interfaces</li>
+                        </ul>
+                    </li>
+                    <li>Agenda overview and how the day is structured</li>
+                </ul>
+            </div>
+
+            <div class="session">
+                <h2>10:00-11:00 | Presentation + Demo: Features Demo</h2>
+                <ul>
+                    <li>Copilot features overview across IDEs</li>
+                    <li>How to choose the right AI tool for the task
+                        <ul>
+                            <li>Code completions</li>
+                            <li>Next edit suggestions</li>
+                            <li>Copilot Chat (Ask, Edit, Agent, Plan)</li>
+                            <li>Coding agent</li>
+                            <li>Code review</li>
+                            <li>Copilot Spaces</li>
+                        </ul>
+                    </li>
+                    <li>Demo: Features Demo (chat commands, generate/explain code, review + commit)</li>
+                </ul>
+            </div>
+
+            <div class="session">
+                <h2>11:00-12:00 | Presentation + Demo: Engineering Practices Demo</h2>
+                <ul>
+                    <li>Planning: brainstorm and scope using Copilot Chat and Spaces</li>
+                    <li>Code creation, testing, and debugging
+                        <ul>
+                            <li>Code completions and next edit suggestions</li>
+                            <li>Chat modes and when to use each</li>
+                        </ul>
+                    </li>
+                    <li>Demo: Engineering Practices (inspect Copilot context, export/import chats, shared prompts)</li>
+                </ul>
+            </div>
+
+            <div class="session lunch">
+                <h2>12:00-1:00 | Lunch</h2>
+            </div>
+
+            <div class="session">
+                <h2>1:00-2:00 | Presentation + Demo: Customize Copilot Demo</h2>
+                <ul>
+                    <li>Customize Copilot Chat responses to fit preferences and requirements</li>
+                    <li>Custom instructions, prompt files, and custom chat modes</li>
+                    <li>Model selection and premium request considerations</li>
+                    <li>Demo: Customize Copilot (model switching, prompt files, custom instructions, MCP setup)</li>
+                </ul>
+            </div>
+
+            <div class="session">
+                <h2>2:00-2:45 | Presentation + Demo: Copilot Spaces Demo</h2>
+                <ul>
+                    <li>Copilot Spaces overview and creation flow</li>
+                    <li>Context handling and best uses (onboarding, system knowledge, style guides)</li>
+                    <li>Demo: Copilot Spaces (create a space and apply shared context)</li>
+                </ul>
+            </div>
+
+            <div class="session">
+                <h2>2:45-3:45 | Presentation + Demo: Coding Agent Demo</h2>
+                <ul>
+                    <li>Coding agent overview and features</li>
+                    <li>Best practices (well-scoped issues, task selection, custom instructions, MCP)</li>
+                    <li>Demo: Coding Agent (assign issue, review PRs, iterate with comments)</li>
+                </ul>
+            </div>
+
+            <div class="session">
+                <h2>3:45-4:30 | Presentation: Context engineering and prompt techniques</h2>
+                <ul>
+                    <li>Context engineering in IDE and GitHub.com</li>
+                    <li>Context gathering and exclusion settings</li>
+                    <li>Prompt engineering techniques
+                        <ul>
+                            <li>Chain of thought</li>
+                            <li>Few-shot prompting</li>
+                            <li>Step-back prompting</li>
+                            <li>Retrieval-augmented generation (RAG)</li>
+                        </ul>
+                    </li>
+                    <li>Hands-on exercise: improve a prompt with examples and context</li>
+                </ul>
+            </div>
+
+            <div class="session lab">
+                <h2>4:30-5:00 | Lab: Hands-on Workshop</h2>
+                <ul>
+                    <li>Create a repository in your org, clone locally, choose a use case</li>
+                    <li>Develop and test changes with Copilot support</li>
+                    <li>Use chat commands (for example, <code>/help</code>, <code>@workspace</code>) when stuck</li>
+                    <li>Share outcomes and takeaways</li>
+                    <li>Wrap-up and questions</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>GitHub Copilot Developer Workshop | February 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
